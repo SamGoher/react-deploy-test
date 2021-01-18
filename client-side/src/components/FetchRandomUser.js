@@ -7,10 +7,10 @@ export default class FetchRandomUser extends React.Component {
   };
 
   async componentDidMount() {
-    const url = "http://localhost:5000/";
+    const url = `/api`;
+    console.log(process.env.PORT);
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
     this.setState({ person: data.results[0], loading: false });
   }
 
